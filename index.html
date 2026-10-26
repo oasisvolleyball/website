@@ -628,7 +628,7 @@ body.locked{overflow:hidden}
 .chat-fab{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;background:var(--navy);color:var(--on-navy);border:0;border-radius:999px;padding:8px 18px 8px 8px;font:700 1rem var(--body);cursor:pointer;box-shadow:0 8px 24px rgba(5,10,40,.28)}
 .chat-fab .av{width:38px;height:38px;border-radius:50%;background:var(--aqua);color:#06123f;display:grid;place-items:center;font-weight:700;font-size:1.05rem}
 .chat-fab:hover{background:var(--aqua-ink)}
-.chat{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:41;width:380px;max-width:calc(100vw - 32px);height:min(620px,calc(100vh - 40px));background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 18px 50px rgba(5,10,40,.32)}
+.chat{position:fixed;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:65;width:380px;max-width:calc(100vw - 32px);height:min(620px,calc(100vh - 40px));height:min(620px,calc(100dvh - 40px));background:var(--surface);color:var(--fg);border:1px solid var(--line);border-radius:14px;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 18px 50px rgba(5,10,40,.32)}
 .chat[dir="rtl"]{font-family:"IBM Plex Sans Arabic",var(--body)}
 .chat-head{background:var(--navy);color:var(--on-navy);display:flex;align-items:center;gap:10px;padding:12px 12px 12px 14px}
 .chat-head .av{width:40px;height:40px;border-radius:50%;background:var(--aqua);color:#06123f;display:grid;place-items:center;font-weight:700;flex:none}
@@ -652,7 +652,10 @@ body.locked{overflow:hidden}
 .chat-form{display:flex;gap:8px;padding:10px;border-top:1px solid var(--line);background:var(--surface);padding-bottom:calc(10px + env(safe-area-inset-bottom,0px))}
 .chat-form input{flex:1;min-width:0;border:1px solid var(--line);background:var(--bg);color:var(--fg);border-radius:999px;padding:10px 14px;font:inherit;font-size:16px}
 .chat-form button{background:var(--navy);color:var(--on-navy);border:0;border-radius:999px;padding:0 16px;font:700 .9rem inherit;font-family:inherit;cursor:pointer}
-@media (max-width:520px){.chat{right:0;left:0;bottom:0;width:100%;max-width:100%;height:calc(100% - env(safe-area-inset-top,0px) - 24px);border-radius:14px 14px 0 0}}
+@media (max-width:520px){.chat{left:0;right:0;bottom:0;top:calc(env(safe-area-inset-top,0px) + 10px);width:100%;max-width:100%;height:auto;border-radius:14px 14px 0 0}}
+@media (max-height:560px) and (min-width:521px){.chat{top:calc(env(safe-area-inset-top,0px) + 10px);height:auto}}
+body.chat-open{overflow:hidden}
+@media (min-width:521px){body.chat-open{overflow:auto}}
 
 @media (max-width:600px){.chat-fab{padding:8px}.chat-fab #fabLabel{display:none}}
 body.locked .chat-fab{display:none}
@@ -702,11 +705,6 @@ body.locked .chat-fab{display:none}
         <button class="btn yellow" type="button" data-join="team">Book a free trial</button>
         <a class="btn line" href="#schedule">See the weekly schedule</a>
       </div>
-      <ul class="trust">
-        <li><span><b>UAE National League</b> 2026/27</span></li>
-        <li><span><b>Medal winners</b>, Open Masters Games 2026</span></li>
-        <li><span><b>250+</b> players in our community</span></li>
-      </ul>
     </div>
     <div class="hero-stack">
       <figure class="polaroid hero-a">
@@ -731,35 +729,35 @@ body.locked .chat-fab{display:none}
         <li>
           <p class="day">Mon<small>8–10 pm</small></p>
           <p class="what"><b>Mixed social games</b><span>Men &amp; women, ages 16+, all levels</span><br><span class="tag mixed">Open to all</span></p>
-          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=International+Community+School+Khalidiya+Abu+Dhabi" target="_blank" rel="noopener">ICS Khalidiya</a><span>Free parking in front, paid street parking beside</span></p>
+          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=International+Community+School+Khalidiya+Abu+Dhabi" target="_blank" rel="noopener">ICS Khalidiya</a></p>
           <p class="fee">35 AED<span>per game</span></p>
           <p class="act"><a class="btn sm" href="https://volleyball-signup.vercel.app" target="_blank" rel="noopener">Sign up</a></p>
         </li>
         <li>
           <p class="day">Tue<small>8–10 pm</small></p>
           <p class="what"><b>Women's team training</b><span>Ages 18+, basic skills needed</span><br><span class="tag women">Women</span></p>
-          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Sports+Hub+Khalidiya+Abu+Dhabi" target="_blank" rel="noopener">The Sports Hub, Khalidiya</a><span>Free parking</span></p>
+          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=The+Sports+Hub+Khalidiya+Abu+Dhabi" target="_blank" rel="noopener">The Sports Hub, Khalidiya</a></p>
           <p class="fee">Free trial<span>then 100 AED or a pass</span></p>
           <p class="act"><button class="btn sm" type="button" data-join="team">Book trial</button></p>
         </li>
         <li>
           <p class="day">Thu<small>8–10 pm</small></p>
           <p class="what"><b>Women's team training</b><span>Ages 18+, basic skills needed</span><br><span class="tag women">Women</span></p>
-          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=British+International+School+Abu+Dhabi" target="_blank" rel="noopener">British International School Abu Dhabi</a><span>BISAD</span></p>
+          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=British+International+School+Abu+Dhabi" target="_blank" rel="noopener">British International School Abu Dhabi</a></p>
           <p class="fee">Free trial<span>then 100 AED or a pass</span></p>
           <p class="act"><button class="btn sm" type="button" data-join="team">Book trial</button></p>
         </li>
         <li>
           <p class="day">Fri<small>9–11 pm</small></p>
           <p class="what"><b>Mixed social games</b><span>Men &amp; women, ages 16+, all levels</span><br><span class="tag mixed">Open to all</span></p>
-          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Raha+International+School+Khalifa+City+Campus+Abu+Dhabi" target="_blank" rel="noopener">Raha International School, Khalifa City</a><span>Bring your Emirates ID (digital is fine)</span></p>
+          <p class="where"><a href="https://www.google.com/maps/search/?api=1&amp;query=Raha+International+School+Khalifa+City+Campus+Abu+Dhabi" target="_blank" rel="noopener">Raha International School, Khalifa City</a></p>
           <p class="fee">35 AED<span>per game</span></p>
           <p class="act"><a class="btn sm" href="https://volleyball-signup.vercel.app" target="_blank" rel="noopener">Sign up</a></p>
         </li>
         <li>
           <p class="day">Monthly<small>Dates vary</small></p>
           <p class="what"><b>Ladies-only games</b><span>Women of all levels and backgrounds</span><br><span class="tag women">Women</span></p>
-          <p class="where">Venue shared with each invite<span>Invites go to our WhatsApp group</span></p>
+          <p class="where">Venue shared with each invite</p>
           <p class="fee">70 AED<span>per game</span></p>
           <p class="act"><a class="btn sm" href="https://chat.whatsapp.com/EtNuUqPx47xL4fgCQy8T78" target="_blank" rel="noopener">Join group</a></p>
         </li>
@@ -1080,7 +1078,7 @@ var MAIL='oasisvolleyballad@gmail.com';
 var UI={
  en:{sub:'Oasis Volleyball Club',lang:'عربي',fab:'Questions? Chat with Noor',ph:'Type your question',send:'Send',
   hello:'Hi, I\'m Noor from Oasis Volleyball Club. Ask me anything about our social games, the women\'s team, kids\' programmes, prices or sponsorship. You can also pick a topic below.',
-  fallback:'I\'m not sure about that one. I can pass your question to our team on WhatsApp so they can answer you directly.',
+  fallback:'Sorry, I didn\'t quite get that. Try asking it another way, or pick a topic below. I can also pass your question to our team on WhatsApp.',
   lead:'Talk to the team',more:'Other questions',restart:'Start again',
   askName:'Great. I\'ll put together a message for our team so you won\'t have to repeat yourself. What\'s your name?',
   askInterest:'Thanks, {n}! What are you interested in?',
@@ -1093,7 +1091,7 @@ var UI={
   levels:['Never played','Beginner','Basic skills','Intermediate','Advanced']},
  ar:{sub:'نادي أوايسس للكرة الطائرة',lang:'English',fab:'لديك سؤال؟ تحدث مع نور',ph:'اكتب سؤالك',send:'إرسال',
   hello:'مرحباً، أنا نور من نادي أوايسس للكرة الطائرة. اسألني عن المباريات الاجتماعية، فريق السيدات، برامج الأطفال، الأسعار أو الرعاية. يمكنك أيضاً اختيار موضوع من الأسفل.',
-  fallback:'لست متأكدة من الإجابة. يمكنني إرسال سؤالك إلى فريقنا عبر واتساب ليجيبوك مباشرة.',
+  fallback:'عذراً، لم أفهم سؤالك تماماً. جرّب صياغته بطريقة أخرى أو اختر موضوعاً من الأسفل. يمكنني أيضاً إرسال سؤالك إلى فريقنا عبر واتساب.',
   lead:'تواصل مع الفريق',more:'أسئلة أخرى',restart:'البدء من جديد',
   askName:'رائع. سأجهز رسالة لفريقنا حتى لا تضطر لتكرار أي شيء. ما اسمك؟',
   askInterest:'شكراً يا {n}! ما الذي يهمك؟',
@@ -1115,7 +1113,7 @@ var KB=[
   ar:'<b>المباريات الاجتماعية المختلطة</b> مفتوحة للرجال والنساء من عمر 16 عاماً فما فوق، والمبتدئون مرحب بهم.<ul><li>الاثنين، 8–10 مساءً في مدرسة ICS الخالدية</li><li>الجمعة، 9–11 مساءً في مدرسة الراحة الدولية، حرم مدينة خليفة</li></ul>السعر 35 درهماً للمباراة. سجّل عبر تطبيقنا: '+APP+'. يتم توزيع الفرق بشكل متوازن في نفس الليلة.<br><br><a href="https://chat.whatsapp.com/GD7I8r3fnTNLAEN6s6q2b7" target="_blank" rel="noopener">انضم إلى مجموعة واتساب للمباريات الاجتماعية</a> لمعرفة مواعيد المباريات.',
   next:['pay','venues','cancel','lead']},
  {id:'team',en_l:'Women\'s team',ar_l:'فريق السيدات',p:2,
-  kw:['فريق السيدات','فريق للسيدات','فريق نسائي','team','womens team','women\'s team','ladies team','training','train','tuesday','thursday','join the team','trial','tryout','فريق','تدريب','تمرين','الثلاثاء','الخميس','تجربه'],
+  kw:['free trial','free session','first session','is it free','try','free','فريق السيدات','فريق للسيدات','فريق نسائي','team','womens team','women\'s team','ladies team','training','train','tuesday','thursday','join the team','trial','tryout','فريق','تدريب','تمرين','الثلاثاء','الخميس','تجربه'],
   en:'Our <b>women\'s team</b> trains with a professional coach:<ul><li>Tuesday, 8–10 pm at Sports Hub Khalidiya</li><li>Thursday, 8–10 pm at BISAD (British International School Abu Dhabi)</li></ul>You need to be 18+ with basic playing skills. <b>Your first trial session is free.</b><br><br>Prices: 100 AED per session, 500 AED per calendar month (unused sessions don\'t carry over), or 3,000 AED for the full season, prorated if you join mid-season.',
   ar:'<b>فريق السيدات</b> يتدرب مع مدرب محترف:<ul><li>الثلاثاء، 8–10 مساءً في سبورتس هب الخالدية</li><li>الخميس، 8–10 مساءً في المدرسة البريطانية الدولية أبوظبي (BISAD)</li></ul>يجب أن يكون عمرك 18 عاماً أو أكثر مع مهارات لعب أساسية. <b>الحصة التجريبية الأولى مجانية.</b><br><br>الأسعار: 100 درهم للحصة، 500 درهم للشهر الميلادي (الحصص غير المستخدمة لا تُرحّل)، أو 3,000 درهم للموسم كاملاً، ويُحسب بالتناسب إذا انضممت خلال الموسم.',
   next:['coach','league','kit','lead']},
@@ -1134,7 +1132,7 @@ var KB=[
   en:'Payment is due 24 hours before the game, or you\'ll be moved to the waitlist. You can remove yourself in the app up to 24 hours before. If you cancel later than that, you still need to pay or find someone to take your spot. Repeated late cancellations or no-shows mean you\'ll be placed on the waitlist for future games.',
   ar:'يجب الدفع قبل المباراة بـ 24 ساعة، وإلا سيتم نقلك إلى قائمة الانتظار. يمكنك إلغاء تسجيلك عبر التطبيق حتى 24 ساعة قبل المباراة. إذا ألغيت بعد ذلك، يجب عليك الدفع أو إيجاد بديل لمكانك. تكرار الإلغاء المتأخر أو عدم الحضور يعني وضعك على قائمة الانتظار في المباريات القادمة.',
   next:['pay','social','lead']},
- {id:'venues',en_l:'Venues & parking',ar_l:'المواقع والمواقف',p:1,
+ {id:'venues',en_l:'Venues & parking',ar_l:'المواقع والمواقف',p:1,qw:['where','parking','park','اين','وين','موقف'],
   kw:['where','location','address','venue','venues','parking','park','map','gate','id','emirates id','directions','اين','أين','موقع','عنوان','موقف','مواقف','هويه','الهويه','بوابه'],
   en:'<ul><li><b>ICS Khalidiya</b> (Monday games): some free parking in front of the school, and paid parking on the street beside it.</li><li><b>Raha International School, Khalifa City Campus</b> (Friday games): bring your Emirates ID for the security gate. A digital ID is fine.</li><li><b>Sports Hub Khalidiya</b> (Tuesday training): free parking.</li><li><b>BISAD</b> (Thursday training): details are shared in the training group.</li></ul>',
   ar:'<ul><li><b>مدرسة ICS الخالدية</b> (مباريات الاثنين): مواقف مجانية محدودة أمام المدرسة، ومواقف مدفوعة في الشارع بجانبها.</li><li><b>مدرسة الراحة الدولية، حرم مدينة خليفة</b> (مباريات الجمعة): أحضر هويتك الإماراتية لبوابة الأمن، والهوية الرقمية مقبولة.</li><li><b>سبورتس هب الخالدية</b> (تدريب الثلاثاء): مواقف مجانية.</li><li><b>BISAD</b> (تدريب الخميس): تتم مشاركة التفاصيل في مجموعة التدريب.</li></ul>',
@@ -1190,7 +1188,7 @@ var KB=[
   ar:'أحضر حذاءً رياضياً نظيفاً للصالات، وملابس رياضية مريحة، وزجاجة ماء. واقيات الركبة اختيارية. نحن نوفر الكرات. لمباريات الجمعة في مدرسة الراحة، أحضر هويتك الإماراتية أيضاً.',
   next:['social','venues']},
  {id:'season',en_l:'Season & breaks',ar_l:'الموسم والعطل',p:1,
-  kw:['season','break','breaks','ramadan','holiday','holidays','schedule','calendar','eid','summer','موسم','الموسم','رمضان','عطله','عطلات','عيد','جدول'],
+  kw:['season','break','breaks','ramadan','holiday','holidays','calendar','eid','summer','موسم','الموسم','رمضان','عطله','عطلات','عيد','جدول'],
   en:'The 2026/27 training season runs from <b>September 1, 2026 to June 15, 2027</b>. Breaks: winter break (Dec 24 – Jan 3), Ramadan (about Feb 7 – Mar 8) and Eid al-Fitr, spring break (Apr 5–11), Eid al-Adha (about May 16–20) and Islamic New Year (about Jun 5–7). Islamic holiday dates depend on the moon sighting.',
   ar:'موسم التدريب 2026/27 يمتد من <b>1 سبتمبر 2026 إلى 15 يونيو 2027</b>. العطل: العطلة الشتوية (24 ديسمبر – 3 يناير)، رمضان (تقريباً 7 فبراير – 8 مارس) وعيد الفطر، عطلة الربيع (5–11 أبريل)، عيد الأضحى (تقريباً 16–20 مايو) ورأس السنة الهجرية (تقريباً 5–7 يونيو). مواعيد المناسبات الإسلامية تعتمد على رؤية الهلال.',
   next:['team','lead']},
@@ -1209,6 +1207,26 @@ var KB=[
   en:'<ul><li>WhatsApp: +971 50 198 6469</li><li>Email: '+MAIL+'</li><li>Instagram and TikTok: @oasisvolleyballclub</li></ul>Or I can write a message to our team for you, so you don\'t have to explain everything again.',
   ar:'<ul><li>واتساب: ‎+971 50 198 6469</li><li>البريد: '+MAIL+'</li><li>إنستغرام وتيك توك: ‎@oasisvolleyballclub</li></ul>أو يمكنني كتابة رسالة لفريقنا نيابة عنك حتى لا تضطر لشرح كل شيء من جديد.',
   next:['lead']},
+ {id:'join',en_l:'How to join',ar_l:'كيف أنضم',p:0,
+  kw:['join','how do i join','how to join','how can i join','sign up','signup','register','registration','get started','start playing','membership','member','become a member','how can i play','how do i play','i want to play','want to play','play with you','interested','participate','enroll','enrol','new here','انضم','انضمام','الانضمام','اشترك','الاشتراك','تسجيل','التسجيل','كيف العب','اريد اللعب','عضويه'],
+  en:'Welcome! How you join depends on what you\'d like to do:<ul><li><b>Social games</b> (men &amp; women, 16+, all levels): sign up and pay in our app, '+APP+'. 35 AED a game, Mondays and Fridays.</li><li><b>Women\'s team</b> (18+, basic skills): your first training is free. Tap <b>Talk to the team</b> below and I\'ll book it for you.</li><li><b>Ladies-only games</b>: <a href="https://chat.whatsapp.com/EtNuUqPx47xL4fgCQy8T78" target="_blank" rel="noopener">join our Ladies Only WhatsApp group</a> for the invites.</li><li><b>Kids</b> (from age 5): coming soon. Leave your details and we\'ll be in touch.</li></ul>Which one are you interested in?',
+  ar:'أهلاً بك! طريقة الانضمام تعتمد على ما تريد:<ul><li><b>المباريات الاجتماعية</b> (رجال ونساء، 16+، جميع المستويات): سجّل وادفع عبر تطبيقنا '+APP+'. 35 درهماً للمباراة، الاثنين والجمعة.</li><li><b>فريق السيدات</b> (18+، مهارات أساسية): الحصة الأولى مجانية. اضغط <b>تواصل مع الفريق</b> وسأحجزها لك.</li><li><b>مباريات السيدات فقط</b>: <a href="https://chat.whatsapp.com/EtNuUqPx47xL4fgCQy8T78" target="_blank" rel="noopener">انضمي إلى مجموعة السيدات على واتساب</a> للدعوات.</li><li><b>الأطفال</b> (من 5 سنوات): قريباً. اترك بياناتك وسنتواصل معك.</li></ul>ما الذي يهمك؟',
+  next:['social','team','ladies','kids','lead']},
+ {id:'schedule',en_l:'Weekly schedule',ar_l:'الجدول الأسبوعي',p:1,qw:['when','what time','what days','which days','tonight','today','tomorrow','this week','متى','اليوم','الليله'],
+  kw:['schedule','timetable','times','time','when','what days','which days','days','tonight','today','tomorrow','this week','weekend','evening','hours','sessions','متى','الجدول','جدول','المواعيد','موعد','الوقت','اليوم','الليله','الاسبوع'],
+  en:'Here\'s our weekly schedule:<ul><li><b>Monday</b> 8–10 pm: mixed social games, ICS Khalidiya</li><li><b>Tuesday</b> 8–10 pm: women\'s team training, The Sports Hub, Khalidiya</li><li><b>Thursday</b> 8–10 pm: women\'s team training, BISAD</li><li><b>Friday</b> 9–11 pm: mixed social games, Raha International School, Khalifa City</li><li><b>About once a month</b>: ladies-only games (invites in our WhatsApp group)</li></ul>',
+  ar:'جدولنا الأسبوعي:<ul><li><b>الاثنين</b> 8–10 مساءً: مباريات اجتماعية مختلطة، مدرسة ICS الخالدية</li><li><b>الثلاثاء</b> 8–10 مساءً: تدريب فريق السيدات، سبورتس هب الخالدية</li><li><b>الخميس</b> 8–10 مساءً: تدريب فريق السيدات، BISAD</li><li><b>الجمعة</b> 9–11 مساءً: مباريات اجتماعية مختلطة، مدرسة الراحة الدولية، مدينة خليفة</li><li><b>مرة تقريباً كل شهر</b>: مباريات السيدات فقط (الدعوات في مجموعة واتساب)</li></ul>',
+  next:['join','venues','price']},
+ {id:'alone',en_l:'Coming alone',ar_l:'القدوم بمفردي',p:2,
+  kw:['alone','on my own','by myself','myself','no friends','without a team','need a team','have a team','bring a friend','bring friends','bring a partner','need a partner','partner','وحدي','بمفردي','لوحدي','بدون فريق','صديق','صديقتي'],
+  en:'Yes, you can absolutely come on your own. Most people do! At our social games teams are mixed and balanced on the night, so you\'ll be put in a team when you arrive. Friends are welcome too, just ask them to sign up in the app.',
+  ar:'بالتأكيد يمكنك القدوم بمفردك، وهذا ما يفعله معظم اللاعبين! في المباريات الاجتماعية يتم توزيع الفرق بشكل متوازن في نفس الليلة، لذلك ستنضم إلى فريق عند وصولك. الأصدقاء مرحب بهم أيضاً، فقط يجب أن يسجلوا عبر التطبيق.',
+  next:['social','join']},
+ {id:'about',en_l:'About Oasis',ar_l:'عن أوايسس',p:0,
+  kw:['about','who are you','what is oasis','tell me about','what do you do','club','oasis','من انتم','عن النادي','النادي','اوايسس'],
+  en:'Oasis Volleyball Club is a volleyball club in Abu Dhabi for adults and kids, men and women, from beginners to experienced players. We run mixed social games every Monday and Friday, a competitive women\'s team in the UAE National League, monthly ladies-only games, private coaching, and soon kids\' programmes.',
+  ar:'نادي أوايسس للكرة الطائرة نادٍ في أبوظبي للكبار والأطفال، رجالاً ونساءً، من المبتدئين إلى اللاعبين ذوي الخبرة. ننظم مباريات اجتماعية مختلطة كل اثنين وجمعة، ولدينا فريق سيدات تنافسي في دوري الإمارات، ومباريات للسيدات فقط شهرياً، وحصصاً خاصة، وقريباً برامج للأطفال.',
+  next:['join','schedule','price']},
  {id:'hello',en_l:'Hello',ar_l:'ترحيب',p:0,
   kw:['hi','hello','hey','salam','good morning','good evening','مرحبا','السلام','اهلا','هلا','صباح','مساء'],
   en:'Hi! How can I help you today?',ar:'أهلاً! كيف يمكنني مساعدتك اليوم؟',next:['social','team','kids','price']},
@@ -1217,7 +1235,7 @@ var KB=[
   en:'You\'re welcome! Anything else I can help with?',ar:'العفو! هل هناك شيء آخر يمكنني مساعدتك به؟',next:['more','lead']}
 ];
 var BY={};KB.forEach(function(k){BY[k.id]=k;});
-var MAIN=['social','team','ladies','kids','price','private','sponsor','lead'];
+var MAIN=['join','schedule','social','team','ladies','kids','price','lead'];
 var INTERESTS=['social','team','ladies','kids','private','kit','sponsor','other'];
 
 function norm(s){
@@ -1226,22 +1244,23 @@ function norm(s){
   .replace(/[’`]/g,"'").replace(/[^a-z0-9'؀-ۿ:]+/g,' ');
  return s.replace(/\s+/g,' ');
 }
-KB.forEach(function(k){k.nkw=k.kw.map(function(w){return norm(w).trim();});});
+KB.forEach(function(k){k.nkw=k.kw.map(function(w){return norm(w).trim();});if(k.qw)k.nqw=k.qw.map(function(w){return norm(w).trim();});});
 function match(text){
  var t=norm(text),best=null,bs=0;
  KB.forEach(function(k){
   var s=0;
   k.nkw.forEach(function(w){
    if(!w)return;
-   var hit=/[؀-ۿ]/.test(w)?t.indexOf(w)>-1:t.indexOf(' '+w+' ')>-1;
+   var hit=/[؀-ۿ]/.test(w)?t.indexOf(w)>-1:(t.indexOf(' '+w+' ')>-1||(w.indexOf(' ')<0&&w.length>=4&&t.indexOf(' '+w)>-1));
    if(hit)s+=10+w.split(' ').length*2;
   });
+  if(k.nqw)k.nqw.forEach(function(w){var hit=/[؀-ۿ]/.test(w)?t.indexOf(w)>-1:t.indexOf(' '+w+' ')>-1;if(hit)s+=12;});
   if(s>0)s+=k.p;
   if(s>bs){bs=s;best=k;}
  });
  return best;
 }
-var LEAD_WORDS=['talk to','speak to','human','real person','someone','call me','contact me','sign me up','register me','book','تواصل معي','اريد التسجيل','سجلني','احجز','شخص'];
+var LEAD_WORDS=['talk to','speak to','human','real person','call me','contact me','sign me up','register me','book','تواصل معي','اريد التسجيل','سجلني','احجز','شخص'];
 
 var lang=(navigator.language||'').toLowerCase().indexOf('ar')===0?'ar':'en';
 var state={mode:'chat',step:null,lead:{},topics:[],questions:[]};
@@ -1357,12 +1376,12 @@ function handle(text){
  if(k&&k.id!=='hello'&&k.id!=='thanks'&&state.questions.length<6)state.questions.push(text.slice(0,140));
  if(k){answer(k);return;}
  if(state.questions.length<6)state.questions.push(text.slice(0,140));
- bot(t('fallback'));topicChips(['lead','more']);
+ bot(t('fallback'));topicChips(['join','schedule','price','social','team','lead']);
 }
 
 var started=false;
-function open(){panel.hidden=false;fab.hidden=true;applyLang();if(!started){started=true;bot(t('hello'));showMain();}setTimeout(function(){input.focus();},50);}
-function close(){panel.hidden=true;fab.hidden=false;fab.focus();}
+function open(){panel.hidden=false;fab.hidden=true;document.body.classList.add('chat-open');applyLang();if(!started){started=true;bot(t('hello'));showMain();}setTimeout(function(){input.focus();},50);}
+function close(){panel.hidden=true;fab.hidden=false;document.body.classList.remove('chat-open');fab.focus();}
 fab.addEventListener('click',open);
 $('chatClose').addEventListener('click',close);
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!panel.hidden)close();});
