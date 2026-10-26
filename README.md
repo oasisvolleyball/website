@@ -1,6 +1,6 @@
 # Oasis Volleyball Club website
 
-Live at https://oasisvolleyball.github.io/website/
+Live at https://www.oasisvolleyballclub.com/
 
 ## Updating the site on GitHub (important)
 All files sit in ONE folder, with no subfolders. When you update:

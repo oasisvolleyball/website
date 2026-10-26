@@ -23,4 +23,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://oasisvolleyball.github.io/website/sitemap.xml
+Sitemap: https://www.oasisvolleyballclub.com/sitemap.xml
