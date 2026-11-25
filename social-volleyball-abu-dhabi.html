@@ -328,7 +328,7 @@ section.block.alt{background:var(--surface);border-block:1px solid var(--line)}
 .team-photo{}
 .team-photo img{aspect-ratio:auto}
 .fees{margin-top:72px}
-.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+.prices{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
 .price{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px;display:grid;gap:6px;align-content:start}
 .price h3{font-size:1rem;color:var(--muted);font-weight:600}
 .price .amt{font-family:var(--display);font-weight:900;font-size:3rem;line-height:1;font-variant-numeric:tabular-nums}
@@ -342,7 +342,7 @@ section.block.alt{background:var(--surface);border-block:1px solid var(--line)}
 .price .best{position:absolute;top:-12px;right:16px;background:var(--ball);color:#1a1400;font-weight:700;font-size:.78rem;padding:3px 12px;border-radius:999px}
 .fees-foot{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:20px}
 .fees-foot p{max-width:62ch}
-@media (max-width:760px){.prices{grid-template-columns:1fr}}
+@media (max-width:1000px){.prices{grid-template-columns:repeat(2,1fr)}}@media (max-width:560px){.prices{grid-template-columns:1fr}}
 .coach{margin-top:88px}
 .coach-pair{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:520px}
 .coach-pair .tilt-l{}
@@ -768,13 +768,13 @@ var KB=[
   next:['pay','venues','cancel','lead']},
  {id:'team',en_l:'Women\'s team',ar_l:'فريق السيدات',p:2,
   kw:['free trial','free session','first session','is it free','try','free','فريق السيدات','فريق للسيدات','فريق نسائي','team','womens team','women\'s team','ladies team','training','train','tuesday','thursday','join the team','trial','tryout','فريق','تدريب','تمرين','الثلاثاء','الخميس','تجربه'],
-  en:'Our <b>women\'s team</b> trains with a professional coach:<ul><li>Tuesday, 8–10 pm at Sports Hub Khalidiya</li><li>Thursday, 8–10 pm at BISAD (British International School Abu Dhabi)</li></ul>You need to be 18+ with basic playing skills. <b>Your first trial session is free.</b><br><br>Prices: 100 AED per session, 500 AED per calendar month (unused sessions don\'t carry over), or 3,000 AED for the full season, prorated if you join mid-season.',
-  ar:'<b>فريق السيدات</b> يتدرب مع مدرب محترف:<ul><li>الثلاثاء، 8–10 مساءً في سبورتس هب الخالدية</li><li>الخميس، 8–10 مساءً في المدرسة البريطانية الدولية أبوظبي (BISAD)</li></ul>يجب أن يكون عمرك 18 عاماً أو أكثر مع مهارات لعب أساسية. <b>الحصة التجريبية الأولى مجانية.</b><br><br>الأسعار: 100 درهم للحصة، 500 درهم للشهر الميلادي (الحصص غير المستخدمة لا تُرحّل)، أو 3,000 درهم للموسم كاملاً، ويُحسب بالتناسب إذا انضممت خلال الموسم.',
+  en:'Our <b>women\'s team</b> trains with a professional coach:<ul><li>Tuesday, 8–10 pm at Sports Hub Khalidiya</li><li>Thursday, 8–10 pm at BISAD (British International School Abu Dhabi)</li></ul>You need to be 18+ with basic playing skills. <b>Your first trial session is free.</b><br><br>Prices: 100 AED per session, or a package: 6 sessions for 500 AED (valid 6 weeks), 15 for 1,000 AED (valid 3 months) or 30 for 1,600 AED (valid until 15 June). You only use a session when you come, and sessions we cancel stay in your package.',
+  ar:'<b>فريق السيدات</b> يتدرب مع مدرب محترف:<ul><li>الثلاثاء، 8–10 مساءً في سبورتس هب الخالدية</li><li>الخميس، 8–10 مساءً في المدرسة البريطانية الدولية أبوظبي (BISAD)</li></ul>يجب أن يكون عمرك 18 عاماً أو أكثر مع مهارات لعب أساسية. <b>الحصة التجريبية الأولى مجانية.</b><br><br>الأسعار: 100 درهم للحصة، أو باقة: 6 حصص بـ500 درهم (صالحة 6 أسابيع)، 15 حصة بـ1,000 درهم (صالحة 3 أشهر)، أو 30 حصة بـ1,600 درهم (صالحة حتى 15 يونيو). تُحتسب الحصة فقط عند حضورك، والحصص التي نلغيها تبقى في باقتك.',
   next:['coach','league','kit','lead']},
  {id:'price',en_l:'Prices',ar_l:'الأسعار',p:0,
   kw:['price','prices','cost','how much','fee','fees','aed','dirham','membership','سعر','اسعار','الاسعار','كم','تكلفه','رسوم','درهم','اشتراك'],
-  en:'Here are our prices:<ul><li>Mixed social games: 35 AED a game</li><li>Ladies-only games: 70 AED</li><li>Women\'s team: 100 AED a session, 500 AED a month, or 3,000 AED for the season (first trial free)</li><li>Private sessions: 500 AED an hour plus the gym cost</li><li>Jerseys: 45 AED printed, or the Adidas kit at about 200–300 AED</li></ul>',
-  ar:'أسعارنا:<ul><li>المباريات الاجتماعية المختلطة: 35 درهماً للمباراة</li><li>مباريات السيدات فقط: 70 درهماً</li><li>فريق السيدات: 100 درهم للحصة، 500 درهم للشهر، أو 3,000 درهم للموسم (الحصة التجريبية الأولى مجانية)</li><li>الحصص الخاصة: 500 درهم للساعة بالإضافة إلى تكلفة الصالة</li><li>القمصان: 45 درهماً للمطبوع محلياً، أو طقم أديداس بحوالي 200–300 درهم</li></ul>',
+  en:'Here are our prices:<ul><li>Mixed social games: 35 AED a game</li><li>Ladies-only games: 70 AED</li><li>Women\'s team: 100 AED a session, or 6 sessions for 500 AED, 15 for 1,000 AED, 30 for 1,600 AED (first trial free)</li><li>Private sessions: 500 AED an hour plus the gym cost</li><li>Jerseys: 45 AED printed, or the Adidas kit at about 200–300 AED</li></ul>',
+  ar:'أسعارنا:<ul><li>المباريات الاجتماعية المختلطة: 35 درهماً للمباراة</li><li>مباريات السيدات فقط: 70 درهماً</li><li>فريق السيدات: 100 درهم للحصة، أو 6 حصص بـ500 درهم، 15 حصة بـ1,000 درهم، 30 حصة بـ1,600 درهم (الحصة التجريبية الأولى مجانية)</li><li>الحصص الخاصة: 500 درهم للساعة بالإضافة إلى تكلفة الصالة</li><li>القمصان: 45 درهماً للمطبوع محلياً، أو طقم أديداس بحوالي 200–300 درهم</li></ul>',
   next:['pay','social','team','lead']},
  {id:'pay',en_l:'Payment',ar_l:'الدفع',p:1,
   kw:['pay','paying','payment','bank','transfer','aani','iban','account','دفع','الدفع','ادفع','تحويل','بنك','حساب','اني','آني'],
@@ -793,8 +793,8 @@ var KB=[
   next:['social','team','lead']},
  {id:'coach',en_l:'Coach',ar_l:'المدرب',p:1,
   kw:['coach','coaches','coaching','trainer','who trains','مدرب','المدرب'],
-  en:'Our coach is a very experienced professional who also coaches the men\'s and women\'s teams at NYU.',
-  ar:'مدربنا محترف وذو خبرة كبيرة، ويدرّب أيضاً فريقي الرجال والسيدات في جامعة نيويورك (NYU).',
+  en:'Our sessions are run by our professional coaches, <b>Coach Zana</b> and <b>Coach Farhud</b>, with drills for every level, from first touches to match tactics.',
+  ar:'يقود حصصنا مدربانا المحترفان، <b>المدربة زانا</b> و<b>المدرب فرهود</b>، بتمارين تناسب جميع المستويات، من الأساسيات إلى تكتيكات المباريات.',
   next:['team','private','lead']},
  {id:'league',en_l:'League & tournaments',ar_l:'الدوري والبطولات',p:1,
   kw:['league','national league','tournament','tournaments','compete','competition','competitive','friendly','friendlies','match','matches','selection','roster','دوري','بطوله','بطولات','ودي','وديه','منافسه'],
